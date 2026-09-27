@@ -19,7 +19,7 @@ const stack = [
 const faq = [
   {
     q: 'Where do the photographs come from?',
-    a: 'Historical works are served live from Wikimedia Commons, using files already in the public domain — pre-colonial artifacts, colonial devotional art, the Ilustrados, Amorsolo\u2019s era, and photographed public monuments. If a file is ever renamed upstream, the interface shows a generated placeholder instead of a broken image.',
+    a: 'Photographs are sourced from Wikimedia Commons. The gallery uses local thumbnail copies so artwork cards still load if Commons redirects are unavailable; each artwork detail page links to the original file and its reuse information.',
   },
   {
     q: 'Why are some paintings "generated studies" instead of the real thing?',

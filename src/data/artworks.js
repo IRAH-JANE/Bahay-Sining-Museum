@@ -8,17 +8,16 @@ import { wiki, generatedCanvas } from '../utils/images'
  * living indigenous crafts (documentary photos, not individually copyrighted
  * art), colonial devotional art, the Ilustrados (Luna d.1899, Hidalgo d.1913),
  * Fabian de la Rosa (d.1937, PD well before the 1996 URAA cutoff), and public
- * monuments under freedom-of-panorama. Everything from Amorsolo onward — his
- * paintings are still held by the Fernando C. Amorsolo Art Foundation — through
- * the Modernists and National Artists is represented as generated studies made
- * in tribute, never as reproductions; every such work says so plainly in its
- * own record.
+ * monuments under freedom-of-panorama. Selected Amorsolo works are included
+ * where the Commons file documents public-domain status or an image reuse
+ * license. Other modernist and contemporary tributes remain original generated
+ * studies, identified as such in their records.
  */
 
 const work = ({ file, thumbWidth = 760, fullWidth = 1600, ...rest }) => ({
   ...rest,
   image: file ? wiki(file, fullWidth) : null,
-  thumb: file ? wiki(file, thumbWidth) : null,
+  thumb: file ? `/images/artworks/${rest.id}.${file.split('.').pop().toLowerCase()}` : null,
   sourceFile: file ?? null,
   generated: false,
 })
@@ -96,7 +95,7 @@ export const artworks = [
     dimensions: '20 × 30 cm (approx.)',
     location: 'National Museum of the Philippines',
     roomId: 'ninuno',
-    file: 'Laguna Copperplate Inscription.jpg',
+    file: 'Laguna Copper-Plate Inscription, c. 10th Century AD (32154702683).jpg',
     description:
       'A copper document, dated within its own text to the Saka year 822 (900 CE), recording that a debt owed by a man named Namwaran has been cleared in full. It is written in Kawi script mixed with Old Malay, Old Javanese and Sanskrit loanwords.',
     historicalContext:
@@ -120,7 +119,7 @@ export const artworks = [
     dimensions: 'Manuscript page',
     location: 'Lilly Library, Indiana University',
     roomId: 'ninuno',
-    file: 'Boxer Codex Visayan Warriors.jpg',
+    file: 'Visayans 4.png',
     description:
       'A watercolour plate from the Boxer Codex depicting armed Visayan warriors in tattooed skin and gold ornament, part of a larger set of illustrations recording the dress of the various peoples of the islands and neighbouring Asia around the time of first sustained Spanish contact.',
     historicalContext:
@@ -229,11 +228,11 @@ export const artworks = [
   }),
   work({
     id: 'dagmay-cloth',
-    title: 'Dagmay Ancestor Cloth',
-    artist: 'Bagobo, Mandaya and Tausug artisans',
+    title: 'Dagmay by Samporonia Madanlo',
+    artist: 'Samporonia Madanlo, Mandaya weaver',
     artistId: 'mindanao-artisans',
-    year: 2000,
-    yearText: 'Contemporary, in an unbroken tradition',
+    year: 2024,
+    yearText: 'Contemporary; photographed 2024',
     period: 'precolonial',
     medium: 'Textile',
     materials: 'Abaca fibre, mud and bark dye',
@@ -242,7 +241,7 @@ export const artworks = [
     dimensions: 'Variable, woven in panels',
     location: 'Davao Oriental, Mindanao',
     roomId: 'mindanao',
-    file: 'Dagmay weaving Mandaya.jpg',
+    file: 'Dagmay abaca textile Samporonia Madanlo Caraga Davao OrientalA.jpg',
     description:
       'A length of dagmay, the Mandaya people\u2019s ikat-woven abaca cloth, dyed dark with mud and bark in patterns depicting crocodiles, lizards, ferns and human ancestor figures believed to protect the wearer.',
     historicalContext:
@@ -254,21 +253,21 @@ export const artworks = [
   work({
     id: 'pis-syabit',
     title: 'Pis Syabit',
-    artist: 'Bagobo, Mandaya and Tausug artisans',
+    artist: 'Tausug weavers, Sulu',
     artistId: 'mindanao-artisans',
-    year: 2000,
-    yearText: 'Contemporary, in an unbroken tradition',
+    year: 1950,
+    yearText: '20th century',
     period: 'precolonial',
     medium: 'Textile',
     materials: 'Cotton or silk, geometric weave',
     category: 'Woven headcloth',
     region: 'Sulu, Mindanao',
-    dimensions: 'Approx. 100 × 100 cm',
-    location: 'Sulu Archipelago',
+    dimensions: 'Approx. 95 × 105 cm',
+    location: 'Honolulu Museum of Art',
     roomId: 'mindanao',
-    file: 'Pis Syabit Tausug weaving.jpg',
+    file: 'Pis siyabit (headscarf), Tausug people, Philippines, Honolulu Museum of Art 14451.1.JPG',
     description:
-      'A pis syabit, the intricately geometric woven headcloth of the Tausug people of Sulu, traditionally worn folded and knotted by men of standing and now also produced as a wider textile art form.',
+      'A 20th-century silk pis siyabit headcloth woven by Tausug makers of southern Mindanao. This example is held by the Honolulu Museum of Art (accession 14451.1).',
     historicalContext:
       'Tausug weaving draws on centuries of trade contact across the Sulu Sea with Brunei, the wider Malay world and southern China, contact that long predates, and continued alongside, the Sultanate of Sulu\u2019s resistance to both Spanish and American colonial control.',
     curatorNote:
@@ -292,7 +291,7 @@ export const artworks = [
     dimensions: 'Approx. 30 cm high',
     location: 'Basilica del Santo Ni\u00f1o, Cebu',
     roomId: 'debosyon',
-    file: 'Santo Nino de Cebu.jpg',
+    file: 'SantoNinoDeCebuImage.jpg',
     description:
       'A devotional carving of the Christ Child in the pose of the original Santo Ni\u00f1o de Cebu, reportedly given to a local ruler\u2019s wife by Magellan\u2019s expedition in 1521 and found intact decades later, unburned, in the ashes of a razed village.',
     historicalContext:
@@ -303,31 +302,31 @@ export const artworks = [
   }),
   work({
     id: 'santo-processional',
-    title: 'Santo Entierro',
+    title: 'Apung Mamacalulu (Santo Entierro)',
     artist: 'Unrecorded santero',
     artistId: 'anon-santero',
-    year: 1780,
-    yearText: '18th century',
+    year: 1830,
+    yearText: 'c. 1828–1838',
     period: 'spanish-colonial',
     medium: 'Sculpture',
-    materials: 'Carved wood, ivory face and hands, gold leaf',
+    materials: 'Carved and painted wood',
     category: 'Processional image',
-    region: 'Luzon',
-    dimensions: 'Life-size, reclining',
-    location: 'Provincial church collection',
+    region: 'Pampanga, Luzon',
+    dimensions: 'Life-size devotional image',
+    location: 'Archdiocesan Shrine of Apung Mamacalulu, Angeles City',
     roomId: 'debosyon',
-    file: 'Santo Entierro Philippines.jpg',
+    file: 'Apung Mamacalulujf4008 04.JPG',
     description:
-      'A reclining Christ figure carved for Holy Week processions, with an ivory face and hands set into a wooden body — a combination technique, using imported Chinese ivory over local woodwork, common to santos of means across the colonial Philippines.',
+      'Apung Mamacalulu, also known as the Santo Entierro of Angeles City, is a life-size image of the dead Christ venerated at its archdiocesan shrine in Pampanga.',
     historicalContext:
-      'Santo Entierro figures like this one still lead Good Friday processions in many Philippine towns; the ivory-and-wood construction reflects the Manila galleon trade\u2019s direct link to Chinese craftsmen and materials throughout the Spanish colonial period.',
+      'The image is associated with the shrine in Lourdes Sur, Angeles City, and is carried in local Holy Week observances.',
     curatorNote:
-      'Interpretation: the combination of Chinese ivory, local hardwood and Spanish devotional form makes a single santo a small monument to three trading worlds meeting in one workshop.',
+      'Interpretation: devotional images such as Apung Mamacalulu are part of living community practice, not only museum objects.',
     tags: ['colonial', 'religious', 'santo', 'holy week'],
   }),
   work({
     id: 'tipos-del-pais-vendor',
-    title: 'Tipos del Pa\u00eds: A Vendor',
+    title: 'Indio de Iloco (Tipos del Pa\u00eds)',
     artist: 'Dami\u00e1n Domingo',
     artistId: 'damian-domingo',
     year: 1825,
@@ -335,14 +334,14 @@ export const artworks = [
     period: 'spanish-colonial',
     medium: 'Painting',
     materials: 'Watercolour on paper',
-    category: 'Genre study',
-    region: 'Manila',
+    category: 'Tipos del Pa\u00eds watercolor',
+    region: 'Ilocos',
     dimensions: 'Album page',
     location: 'Museo Naval, Madrid',
     roomId: 'debosyon',
-    file: 'Damian Domingo Tipos del Pais.jpg',
+    file: 'Indio de Iloco – A Native of Ilocos (Ilocano).jpg',
     description:
-      'A watercolour from Domingo\u2019s Tipos del Pa\u00eds series, cataloguing Manila\u2019s trades and social types — a street vendor, painted with the same careful attention to dress and posture given to portraits of the colony\u2019s elite.',
+      'A watercolour by Dami\u00e1n Domingo depicting an Ilocano man, part of the Tipos del Pa\u00eds tradition of recording the archipelago\u2019s dress and social types.',
     historicalContext:
       'Domingo founded the Academia de Dibujo in 1821, the first formal art school in the colony, and his Tipos series was sold partly to foreign visitors as souvenirs — making it both an art object and an early tourist commodity.',
     curatorNote:
@@ -351,22 +350,22 @@ export const artworks = [
   }),
   work({
     id: 'portrait-principalia',
-    title: 'Portrait of a Provincial Family',
+    title: 'Portrait of Doña Miguela Henson',
     artist: 'Sim\u00f3n Flores y de la Rosa',
     artistId: 'simon-flores',
-    year: 1870,
-    yearText: 'c. 1870s',
+    year: 1875,
+    yearText: 'c. 1870s–1880s',
     period: 'spanish-colonial',
     medium: 'Painting',
     materials: 'Oil on canvas',
     category: 'Portrait',
-    region: 'Bulacan',
-    dimensions: 'Approx. 90 × 70 cm',
-    location: 'Private collection',
+    region: 'Philippines',
+    dimensions: 'Not recorded',
+    location: 'Bangko Sentral ng Pilipinas collection',
     roomId: 'debosyon',
-    file: 'Simon Flores portrait painting.jpg',
+    file: 'Portrait of Doña Miguela Henson - Simón Flores.jpg',
     description:
-      'A formal portrait of a landowning provincial family in European dress, painted with the flat, careful realism typical of Flores\u2019s documentary approach to the colonial principalia — the local elite class through which Spain administered its towns.',
+      'A portrait of Doña Miguela Henson by Simón Flores y de la Rosa, a leading Filipino portraitist of the late Spanish colonial period.',
     historicalContext:
       'Flores worked a generation before Luna and Hidalgo left for Europe, painting almost exclusively for local patrons rather than for exhibition abroad — a quieter, more provincial art world than the one his younger contemporaries would make famous.',
     curatorNote:
@@ -388,7 +387,7 @@ export const artworks = [
     dimensions: 'Manuscript page',
     location: 'Lilly Library, Indiana University',
     roomId: 'debosyon',
-    file: 'Boxer Codex Tagalog couple.jpg',
+    file: 'Naturales 5.png',
     description:
       'A companion plate from the Boxer Codex, showing a Tagalog man and woman of rank in gold jewellery and fine cloth, painted for the same manuscript that recorded the Visayan warriors now hung in the Ancestors room.',
     historicalContext:
@@ -414,7 +413,7 @@ export const artworks = [
     dimensions: '422 × 765 cm',
     location: 'National Museum of Fine Arts, Manila',
     roomId: 'ilustrado',
-    file: 'Juan Luna Spoliarium.jpg',
+    file: 'Spoliarium.jpg',
     description:
       'A monumental canvas showing dead and dying gladiators being dragged from the Roman arena to the spoliarium, where their armour was stripped for reuse. Grieving figures at right watch the bodies pass.',
     historicalContext:
@@ -438,7 +437,7 @@ export const artworks = [
     dimensions: 'Approx. 71 × 46 cm',
     location: 'Lopez Museum, Manila',
     roomId: 'ilustrado',
-    file: 'Espana y Filipinas by Juan Luna.jpg',
+    file: 'Espana y Filipinas.jpg',
     description:
       'An allegorical double portrait of two women — one representing Spain, the other the Philippines — arm in arm and looking toward a shared horizon, painted as a hopeful image of colonial partnership rather than subjugation.',
     historicalContext:
@@ -462,7 +461,7 @@ export const artworks = [
     dimensions: '190 × 100 cm',
     location: 'National Museum of Fine Arts, Manila',
     roomId: 'ilustrado',
-    file: 'Las Virgenes Cristianas Expuestas al Populacho.jpg',
+    file: 'Las Virgenes Cristianas Expuestas Al Populacho (The Christian Virgins Being Exposed to the Populace) by Felix Ressureccion Hidalgo 1884.jpg',
     description:
       'Christian women, condemned under Roman persecution, are led before a jeering crowd. Hidalgo painted the scene with a restraint and cooler palette that contrasted with Luna\u2019s more violent Spoliarium, shown at the same 1884 Madrid exposition.',
     historicalContext:
@@ -473,148 +472,148 @@ export const artworks = [
   }),
   work({
     id: 'triunfo-del-ciencia',
-    title: 'El Triunfo del Ciencia sobre la Muerte',
+    title: 'La Batalla de Lepanto',
     artist: 'Juan Luna',
     artistId: 'juan-luna',
-    year: 1890,
-    yearText: '1890',
+    year: 1887,
+    yearText: '1887',
     period: 'ilustrado',
     medium: 'Painting',
     materials: 'Oil on canvas',
-    category: 'Allegory',
+    category: 'History painting',
     region: 'Spain',
-    dimensions: '95 × 60 cm',
-    location: 'Metropolitan Museum of Manila',
+    dimensions: '350 × 550 cm',
+    location: 'Senate of Spain, Madrid',
     roomId: 'ilustrado',
-    file: 'El Triunfo del Ciencia sobre la Muerte.jpg',
+    file: 'Juan Luna - La Batalla de Lepanto.jpg',
     description:
-      'An allegorical figure representing science stands triumphant over a skeleton, painted in a lighter, more Impressionist-influenced style than Luna\u2019s earlier academic history paintings, reflecting his growing interest in French painting.',
+      'Juan Luna’s monumental history painting depicts the 1571 Battle of Lepanto, a naval battle between the Ottoman fleet and the Holy League.',
     historicalContext:
-      'Painted while Luna lived in Paris and moved in circles that included Impressionist and Post-Impressionist painters, the work marks a stylistic shift away from the dense academic realism of Spoliarium toward looser brushwork and brighter colour.',
+      'Completed in 1887, the painting is held by the Senate of Spain in Madrid.',
     curatorNote:
-      'Interpretation: the title\u2019s optimism about science sits oddly against Luna\u2019s own life a few years later, which ended in personal tragedy rather than triumph — this museum notes that without claiming to explain it.',
-    tags: ['ilustrado', 'allegory', 'paris', 'impressionism'],
+      'Interpretation: Luna brought the scale and drama of European history painting to a subject far removed from the Philippines, while building his career in Spain.',
+    tags: ['ilustrado', 'history painting', 'juan luna', 'lepanto'],
   }),
 
   /* ------------------------------ Silid ng Ginintuang Liwanag ---------------- */
-  generated({
+  work({
     id: 'dalagang-bukid',
-    title: 'Dalagang Bukid (study after Amorsolo)',
-    artist: 'Bahay Sining Studio, in tribute to Fernando Amorsolo',
-    artistId: 'bahay-sining-studio',
-    year: 2026,
-    yearText: '2026, generated',
+    title: 'Dalagang Bukid (Farm Girl)',
+    artist: 'Fernando Amorsolo',
+    artistId: 'fernando-amorsolo',
+    year: 1929,
+    yearText: '1929',
     period: 'american-colonial',
-    medium: 'Generated composition',
-    materials: 'Vector graphics',
-    category: 'Tribute study',
-    region: 'Generated',
-    dimensions: 'Variable',
-    location: 'Generated on request',
+    medium: 'Painting',
+    materials: 'Oil on canvas laid on board',
+    category: 'Genre painting',
+    region: 'Philippines',
+    dimensions: '33 × 40.7 cm',
+    location: 'Private collection; Christie’s',
     roomId: 'ginintuang-liwanag',
-    variant: 'wash',
+    file: 'Dalagang Bukid (Farm Girl). Amorsolo. 1929.jpg',
     description:
-      'A generated study in backlit, golden tones, made in tribute to Amorsolo\u2019s "Dalagang Bukid" (1929) — a portrait of a young woman in provincial dress that also gave its name, a decade earlier, to the first Filipino-produced film.',
+      'Fernando Amorsolo’s 1929 painting of a young woman outdoors, titled Dalagang Bukid (Farm Girl).',
     historicalContext:
-      'Amorsolo\u2019s paintings remain under copyright — held by the Fernando C. Amorsolo Art Foundation — and are not reproduced here. This composition borrows only the general warmth of his signature backlighting, generated fresh from a seed rather than copied from any canvas.',
+      'This is the actual painting, catalogued and offered by Christie’s. It is distinct from the 1928 National Fine Arts Collection painting with the same title.',
     curatorNote:
-      'Interpretation: this is a demonstration piece, not an Amorsolo painting — the real "Dalagang Bukid" is worth seeking out through the Amorsolo Foundation or a Philippine museum collection.',
-    tags: ['golden light', 'generated', 'tribute', 'amorsolo', 'famous'],
-  }),
-  generated({
-    id: 'harvest-1930',
-    title: 'Harvest (study after Amorsolo)',
-    artist: 'Bahay Sining Studio, in tribute to Fernando Amorsolo',
-    artistId: 'bahay-sining-studio',
-    year: 2026,
-    yearText: '2026, generated',
-    period: 'american-colonial',
-    medium: 'Generated composition',
-    materials: 'Vector graphics',
-    category: 'Tribute study',
-    region: 'Generated',
-    dimensions: 'Variable',
-    location: 'Generated on request',
-    roomId: 'ginintuang-liwanag',
-    variant: 'wash',
-    description:
-      'A generated study in layered, sunlit bands, made in tribute to Amorsolo\u2019s many rice-harvest canvases of the 1920s and 1930s — scenes reproduced widely on calendars and postcards as an image of peaceful rural abundance.',
-    historicalContext:
-      'Amorsolo\u2019s paintings remain under copyright and are not reproduced here. This composition borrows only the general structure of a layered field under strong light, generated fresh from a seed.',
-    curatorNote:
-      'Interpretation: the real harvest scenes are worth a second look for what the golden light quietly does — turning visible labour into something closer to leisure.',
-    tags: ['golden light', 'generated', 'tribute', 'amorsolo', 'harvest'],
-  }),
-  generated({
-    id: 'maiden-palay-stalks',
-    title: 'Maiden with Palay Stalks (study after Amorsolo)',
-    artist: 'Bahay Sining Studio, in tribute to Fernando Amorsolo',
-    artistId: 'bahay-sining-studio',
-    year: 2026,
-    yearText: '2026, generated',
-    period: 'american-colonial',
-    medium: 'Generated composition',
-    materials: 'Vector graphics',
-    category: 'Tribute study',
-    region: 'Generated',
-    dimensions: 'Variable',
-    location: 'Generated on request',
-    roomId: 'ginintuang-liwanag',
-    variant: 'wash',
-    description:
-      'A generated study made in tribute to Amorsolo\u2019s early portraits of women holding sheaves of palay (rice stalks) — rice recurs as a subject across nearly every decade of his sixty-year career.',
-    historicalContext:
-      'Amorsolo\u2019s paintings remain under copyright and are not reproduced here. This composition borrows only the general warmth of an early, looser Amorsolo canvas, generated fresh from a seed.',
-    curatorNote:
-      'Interpretation: this is a demonstration piece — the real painting is held at the Ayala Museum in Makati.',
-    tags: ['golden light', 'generated', 'tribute', 'amorsolo', 'rice'],
-  }),
-  generated({
-    id: 'capitan-del-barrio',
-    title: 'Capit\u00e1n del Barrio (study after Amorsolo)',
-    artist: 'Bahay Sining Studio, in tribute to Fernando Amorsolo',
-    artistId: 'bahay-sining-studio',
-    year: 2026,
-    yearText: '2026, generated',
-    period: 'american-colonial',
-    medium: 'Generated composition',
-    materials: 'Vector graphics',
-    category: 'Tribute study',
-    region: 'Generated',
-    dimensions: 'Variable',
-    location: 'Generated on request',
-    roomId: 'ginintuang-liwanag',
-    variant: 'grid',
-    description:
-      'A generated study made in tribute to Amorsolo\u2019s formal portrait commissions — among them likenesses of barrio captains, a local post carried from the Spanish-era cabeza de barangay through to today\u2019s barangay system.',
-    historicalContext:
-      'Amorsolo\u2019s paintings remain under copyright and are not reproduced here. This composition borrows only the general formality of a seated commission portrait, generated fresh from a seed.',
-    curatorNote:
-      'Interpretation: this is a demonstration piece — the real portrait is held at the National Museum of the Philippines.',
-    tags: ['golden light', 'generated', 'tribute', 'amorsolo', 'portrait'],
+      'Amorsolo’s title refers to a country lass. The Commons image page links back to the Christie’s object record and gives the image’s reuse details.',
+    tags: ['golden light', 'amorsolo', 'portrait', 'rural life'],
   }),
   work({
-    id: 'rice-planting-delarosa',
-    title: 'Planting Rice',
-    artist: 'Fabi\u00e1n de la Rosa',
-    artistId: 'fabian-delarosa',
-    year: 1904,
-    yearText: '1904',
+    id: 'harvest-1930',
+    title: 'Harvest',
+    artist: 'Fernando Amorsolo',
+    artistId: 'fernando-amorsolo',
+    year: 1930,
+    yearText: '1930',
     period: 'american-colonial',
     medium: 'Painting',
     materials: 'Oil on canvas',
     category: 'Genre painting',
     region: 'Philippines',
-    dimensions: 'Approx. 95 × 190 cm',
-    location: 'Metropolitan Museum of Manila',
+    dimensions: 'Unknown',
+    location: 'Collection not recorded',
     roomId: 'ginintuang-liwanag',
-    file: 'Fabian de la Rosa Planting Rice 1904.jpg',
+    file: 'Harvest (1930). Amorsolo.jpg',
     description:
-      'Women bend to plant rice seedlings across a flooded paddy field, painted a generation before Amorsolo made the subject famous — de la Rosa\u2019s version is flatter in light and closer to plein-air Impressionism than to Amorsolo\u2019s later theatrical backlighting.',
+      'Amorsolo’s 1930 harvest scene depicts farm workers gathering rice in a Philippine field.',
     historicalContext:
-      'De la Rosa exhibited this painting at the 1904 St. Louis World\u2019s Fair, where it won a prize — the same fair whose "Philippine Exposition" put living Filipinos, including Igorot and Moro delegations, on display as ethnographic exhibits, a practice this museum does not treat as a neutral historical footnote.',
+      'This is a photograph of the identified 1930 painting. The Wikimedia Commons file page provides its source and reuse information.',
     curatorNote:
-      'Interpretation: de la Rosa taught at the University of the Philippines alongside a young Amorsolo, and this canvas is usually read as the direct template Amorsolo later refined, brightened and multiplied many times over.',
+      'The sunlit countryside is a recurring subject in Amorsolo’s work. This card shows the painting itself rather than a newly generated interpretation.',
+    tags: ['golden light', 'amorsolo', 'harvest', 'rural life'],
+  }),
+  work({
+    id: 'maiden-palay-stalks',
+    title: 'Untitled (Maiden with Palay Stalks)',
+    artist: 'Fernando Amorsolo',
+    artistId: 'fernando-amorsolo',
+    year: 1920,
+    yearText: '1920',
+    period: 'american-colonial',
+    medium: 'Painting',
+    materials: 'Oil on canvas',
+    category: 'Portrait',
+    region: 'Philippines',
+    dimensions: 'Unknown',
+    location: 'Ayala Museum collection, Makati',
+    roomId: 'ginintuang-liwanag',
+    file: 'Untitled (Maiden with Palay Stalks) - Fernando Amorsolo.jpg',
+    description:
+      'A 1920 oil painting of a young woman holding a bundle of palay, now in the Ayala Museum collection.',
+    historicalContext:
+      'The Ayala Museum refers to this work as Maiden with Palay Stalks. The linked Commons image is a photograph made at the museum and is licensed CC BY 4.0; see the file page for photographer credit and terms.',
+    curatorNote:
+      'Palay is unhusked rice. The museum describes the painting as an untitled 1920 oil on canvas.',
+    tags: ['golden light', 'amorsolo', 'rice', 'portrait'],
+  }),
+  work({
+    id: 'capitan-del-barrio',
+    title: 'Capitán del Barrio (Neighborhood Captain)',
+    artist: 'Fernando Amorsolo',
+    artistId: 'fernando-amorsolo',
+    year: null,
+    yearText: 'Date not recorded',
+    period: 'american-colonial',
+    medium: 'Painting',
+    materials: 'Oil on canvas',
+    category: 'Portrait',
+    region: 'Philippines',
+    dimensions: 'Unknown',
+    location: 'Collection not recorded',
+    roomId: 'ginintuang-liwanag',
+    file: 'Capitán del Barrio (Neighborhood Captain).jpg',
+    description:
+      'A close portrait by Fernando Amorsolo of a local neighborhood captain.',
+    historicalContext:
+      'Christie’s describes this portrait as an unusual close portrait within Amorsolo’s body of work. The Wikimedia Commons file page links to the auction record and reuse details.',
+    curatorNote:
+      'The title refers to a barrio captain, a neighborhood leadership role. The image shown here is the actual portrait, not a generated stand-in.',
+    tags: ['golden light', 'amorsolo', 'portrait', 'philippine history'],
+  }),
+  work({
+    id: 'rice-planting-delarosa',
+    title: 'Women Working in a Rice Field',
+    artist: 'Fabi\u00e1n de la Rosa',
+    artistId: 'fabian-delarosa',
+    year: 1902,
+    yearText: '1902',
+    period: 'american-colonial',
+    medium: 'Painting',
+    materials: 'Oil on canvas',
+    category: 'Genre painting',
+    region: 'Philippines',
+    dimensions: '65 × 96 cm',
+    location: 'Private collection; recorded at auction',
+    roomId: 'ginintuang-liwanag',
+    file: 'Fabian de la Rosa, Women working in a rice field.jpg',
+    description:
+      'Women working in a flooded rice field, in a 1902 genre painting by Fabián de la Rosa.',
+    historicalContext:
+      'De la Rosa was an influential Filipino genre painter and a teacher of Fernando Amorsolo. This image is the 1902 work titled In the Rice Field, not the separate Planting Rice painting exhibited in 1904.',
+    curatorNote:
+      'Interpretation: rice field scenes became a defining subject in 20th-century Philippine painting, though artists represented rural life in sharply different ways.',
     tags: ['golden light', 'rice', 'genre', 'exposition'],
   }),
 
@@ -916,17 +915,17 @@ export const artworks = [
     title: 'Escolta, Maynila',
     artist: 'Unrecorded and studio photographers',
     artistId: 'anon-photographer',
-    year: 1905,
-    yearText: 'c. early 1900s',
+    year: 1899,
+    yearText: '1899',
     period: 'american-colonial',
     medium: 'Photograph',
-    materials: 'Gelatin silver print',
+    materials: 'Stereoscopic photographic print',
     category: 'Documentary photograph',
     region: 'Manila',
     dimensions: 'Variable',
-    location: 'Philippine National Archives',
+    location: 'Period view card by Underwood & Underwood',
     roomId: 'liwanag-anino',
-    file: 'Escolta Street Manila early 1900s.jpg',
+    file: 'EscoltaManila1899.jpg',
     description:
       'A street-level view of Escolta, Manila\u2019s premier commercial street through the American colonial period, lined with tranv\u00eda tracks, calesas and the ground-floor shopfronts of the city\u2019s first department stores and cinemas.',
     historicalContext:
@@ -950,7 +949,7 @@ export const artworks = [
     dimensions: 'Variable',
     location: 'U.S. National Archives',
     roomId: 'liwanag-anino',
-    file: 'Manila 1945 ruins Intramuros.jpg',
+    file: 'Manila Walled City Destruction May 1945.jpg',
     description:
       'The walled city of Intramuros, reduced to rubble after the month-long Battle of Manila between American and Japanese forces in February 1945 — among the most destructive urban battles of the Pacific War.',
     historicalContext:
@@ -964,19 +963,19 @@ export const artworks = [
     title: 'Banaue Rice Terraces',
     artist: 'Unrecorded and studio photographers',
     artistId: 'anon-photographer',
-    year: 1910,
-    yearText: 'c. early 1900s',
+    year: null,
+    yearText: 'Date not recorded; 1917–1964 archival series',
     period: 'american-colonial',
     medium: 'Photograph',
-    materials: 'Gelatin silver print',
+    materials: 'Archival aerial photograph',
     category: 'Documentary photograph',
     region: 'Ifugao, Luzon',
     dimensions: 'Variable',
-    location: 'Philippine National Archives',
+    location: 'U.S. National Archives and Records Administration',
     roomId: 'liwanag-anino',
-    file: 'Banaue Rice Terraces early photograph.jpg',
+    file: 'Philippine Island - Luzon Island - NARA - 68157163.jpg',
     description:
-      'Hand-built stone and earth rice terraces climbing the mountainsides of Ifugao province, engineered by the Ifugao people over an estimated two thousand years without machinery, photographed early in the American colonial period as the terraces were becoming known outside the Cordillera.',
+      'An archival aerial photograph of the Banaue Rice Terraces in Ifugao, from the U.S. Army Air Forces “Airscapes” series, now held by the U.S. National Archives.',
     historicalContext:
       'UNESCO inscribed the Ifugao terraces as a World Heritage Site in 1995 for representing "the ingenuity of a group of people" sustaining an entire agricultural system across mountain terrain, and the terraces remain farmed today by Ifugao communities.',
     curatorNote:
@@ -985,11 +984,11 @@ export const artworks = [
   }),
   work({
     id: 'kadayawan-festival-davao',
-    title: 'Kadayawan sa Dabaw',
-    artist: 'Unrecorded and studio photographers',
-    artistId: 'anon-photographer',
-    year: 2018,
-    yearText: 'Contemporary',
+    title: 'Celebrating Kadayawan Festival',
+    artist: 'Bert Andone, photographer',
+    artistId: null,
+    year: 2024,
+    yearText: '18 August 2024',
     period: 'contemporary',
     medium: 'Photograph',
     materials: 'Digital photograph',
@@ -998,13 +997,13 @@ export const artworks = [
     dimensions: 'Variable',
     location: 'Davao City, Mindanao',
     roomId: 'liwanag-anino',
-    file: 'Kadayawan Festival Davao street parade.jpg',
+    file: 'Celebrating Kadayawan Festival.jpg',
     description:
-      'Dancers and float-riders in tribal dress fill a Davao City street during the Kadayawan festival — an August celebration of the harvest and of the eleven indigenous tribes and cultural groups of the Davao Region.',
+      'Dancers perform during Davao City’s Kadayawan festival, celebrating the living cultures of the Davao Region.',
     historicalContext:
-      'First held in 1986, Kadayawan takes its name from a Bagobo word roughly meaning something of value or a gift — the festival gathers the Bagobo, Mandaya, Matigsalug, Ata, Tagabawa, K\u2019lagan, Ovu-Manuvu, Iranun, Kalagan, Sama and Maranao communities of the region in one shared week of thanksgiving.',
+      'Kadayawan is an annual celebration of Davao’s cultures and harvest. This photograph was taken on 18 August 2024 and is shared on Wikimedia Commons under CC BY-SA 4.0.',
     curatorNote:
-      'Interpretation: this photograph is the museum\u2019s one contemporary counterpart to the pre-colonial gold and centuries-old weaving elsewhere on these walls — the same Mindanao cultures, still practicing, still celebrated, not only historical.',
+      'Photograph by Bert Andone. The image-source link includes the attribution and license details.',
     tags: ['photography', 'davao', 'mindanao', 'kadayawan', 'festival'],
   }),
 

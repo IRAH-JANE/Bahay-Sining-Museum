@@ -54,6 +54,7 @@ export default function ArtistDetail() {
                 src={artist.portrait}
                 seed={artist.id}
                 alt={`Portrait of ${artist.name}`}
+                missingLabel="Portrait not recorded"
                 eager
                 className="h-72 w-full"
                 imgClassName="object-cover object-top"
@@ -153,6 +154,7 @@ export default function ArtistDetail() {
                       src={other.portrait}
                       seed={other.id}
                       alt=""
+                      missingLabel="Portrait not recorded"
                       className="h-16 w-16 shrink-0 border border-[var(--rule)]"
                       imgClassName="object-cover object-top"
                     />

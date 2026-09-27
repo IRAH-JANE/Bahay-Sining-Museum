@@ -100,6 +100,7 @@ export default function Artists() {
                         src={artist.portrait}
                         seed={artist.id}
                         alt={`Portrait of ${artist.name}`}
+                        missingLabel="Portrait not recorded"
                         className="h-56 w-full"
                         imgClassName="object-cover object-top grayscale-[0.25] transition-all duration-[1200ms] ease-gallery group-hover:scale-[1.04] group-hover:grayscale-0"
                       />

@@ -237,9 +237,23 @@ export default function ArtworkDetail() {
               ) : null}
 
               <p className="mt-6 border-t border-[var(--rule)] pt-5 text-[0.68rem] leading-relaxed text-[var(--ink-faint)]">
-                {artwork.generated
-                  ? 'Generated in your browser for this project. Not a historical object.'
-                  : 'Public-domain work. Photograph served from Wikimedia Commons.'}
+                {artwork.generated ? (
+                  'Generated in your browser for this project. Not a historical object.'
+                ) : (
+                  <>
+                    Historical work; gallery thumbnail is stored locally, with the original Commons file linked below.{' '}
+                    {artwork.sourceFile ? (
+                      <a
+                        href={`https://commons.wikimedia.org/wiki/File:${encodeURIComponent(artwork.sourceFile)}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="link-underline text-[var(--gold)]"
+                      >
+                        View image source and reuse details.
+                      </a>
+                    ) : null}
+                  </>
+                )}
               </p>
             </div>
 

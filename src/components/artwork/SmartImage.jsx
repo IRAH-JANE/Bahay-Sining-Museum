@@ -24,16 +24,17 @@ export function SmartImage({
   eager = false,
   sizes,
   onStatusChange,
+  missingLabel = 'Image not recorded',
 }) {
   const holder = useRef(null)
   const [visible, setVisible] = useState(eager)
   const [status, setStatus] = useState('idle')
-  const [useFallback, setUseFallback] = useState(false)
+  const [useFallback, setUseFallback] = useState(!src)
   const tones = pigment(seed ?? alt ?? 'artwork')
 
   useEffect(() => {
     setStatus('idle')
-    setUseFallback(false)
+    setUseFallback(!src)
   }, [src])
 
   useEffect(() => {
@@ -109,7 +110,7 @@ export function SmartImage({
 
       {useFallback && status === 'loaded' ? (
         <span className="plaque absolute bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black/35 px-2 py-0.5 text-[10px] text-white/80">
-          Photograph unavailable
+          {src ? 'Photograph unavailable' : missingLabel}
         </span>
       ) : null}
     </div>
