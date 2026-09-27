@@ -93,3 +93,8 @@ Favourites, recently viewed works, your own curated exhibitions, achievement pro
 settings are all stored under namespaced keys in this browser's `localStorage` — nothing is sent to
 a server. Settings → Data lets you export everything as a JSON backup, re-import it (validated
 before anything is written), or clear it all.
+
+
+## Disclaimer
+
+Bahay Sining Digital Museum was created by Irah Jane for school and educational purposes only. This project is intended for learning and demonstration purposes and is not intended for commercial or production use.
