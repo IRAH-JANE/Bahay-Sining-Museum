@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------
+   Gallery surfaces, in Bahay Sining's own palette. Light = capiz-shell
+   daylight, dark = narra-wood evening, night = "Gabi sa Museo" — a
+   darker room where only the frames are lit.
+----------------------------------------------------------------*/
+:root {
+  --wall: #f4ede0;
+  --wall-edge: #e6d9bf;
+  --paper: #fbf7ed;
+  --ink: #241713;
+  --ink-soft: #5a463c;
+  --ink-faint: #8a7666;
+  --rule: rgba(36, 23, 19, 0.16);
+  --gold: #b3823a;
+  --frame: #2e1f17;
+  --mat: #fbf7ed;
+  --spot: rgba(255, 246, 225, 0);
+  --shadow-frame: 0 18px 40px -22px rgba(36, 23, 19, 0.5);
+  --room-glow: radial-gradient(120% 80% at 50% 0%, rgba(255, 250, 238, 0.9), rgba(230, 217, 191, 0));
+}
+
+.dark {
+  --wall: #1c140f;
+  --wall-edge: #261c15;
+  --paper: #221a14;
+  --ink: #ecdfcb;
+  --ink-soft: #b8a58c;
+  --ink-faint: #8a7666;
+  --rule: rgba(236, 223, 203, 0.16);
+  --gold: #d4a94f;
+  --frame: #0f0a07;
+  --mat: #1a130d;
+  --shadow-frame: 0 22px 50px -24px rgba(0, 0, 0, 0.85);
+  --room-glow: radial-gradient(120% 80% at 50% 0%, rgba(120, 84, 45, 0.35), rgba(15, 10, 7, 0));
+}
+
+.night {
+  --wall: #0a0705;
+  --wall-edge: #120d0a;
+  --paper: #110c09;
+  --ink: #efe3cd;
+  --ink-soft: #a8917a;
+  --ink-faint: #75634f;
+  --rule: rgba(239, 227, 205, 0.14);
+  --gold: #e0b567;
+  --frame: #000000;
+  --mat: #0d0906;
+  --spot: rgba(255, 226, 168, 0.16);
+  --shadow-frame: 0 0 60px -10px rgba(255, 213, 140, 0.22), 0 30px 60px -30px #000;
+  --room-glow: radial-gradient(90% 60% at 50% -10%, rgba(255, 213, 140, 0.16), rgba(0, 0, 0, 0));
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));
+}
+
+body {
+  margin: 0;
+  background-color: var(--wall);
+  color: var(--ink);
+  font-family: 'Work Sans', system-ui, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 700ms cubic-bezier(0.22, 1, 0.36, 1), color 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--paper);
+}
+
+/* Focus that reads as a gallery label underline rather than a browser ring */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--rule);
+  border: 3px solid transparent;
+  background-clip: content-box;
+  border-radius: 999px;
+}
+
+@layer components {
+  .wall {
+    background-color: var(--wall);
+    background-image: var(--room-glow);
+  }
+
+  /* The plaque beside a work: small, tracked, quiet */
+  .plaque {
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .rule {
+    border-color: var(--rule);
+  }
+
+  .frame-mount {
+    background: var(--mat);
+    box-shadow: var(--shadow-frame);
+    border: 1px solid var(--rule);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.6rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    background: transparent;
+    transition: background-color 500ms cubic-bezier(0.22, 1, 0.36, 1),
+      color 500ms cubic-bezier(0.22, 1, 0.36, 1), transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn:hover:not(:disabled) {
+    background: var(--ink);
+    color: var(--wall);
+  }
+  .btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .btn-solid {
+    background: var(--ink);
+    color: var(--wall);
+  }
+  .btn-solid:hover:not(:disabled) {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--paper);
+  }
+  .btn-quiet {
+    border-color: transparent;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .btn-quiet:hover:not(:disabled) {
+    background: transparent;
+    color: var(--gold);
+  }
+
+  .field {
+    background: transparent;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+    padding: 0.6rem 0;
+    width: 100%;
+    outline: none;
+  }
+  .field::placeholder {
+    color: var(--ink-faint);
+  }
+  .field:focus {
+    border-color: var(--gold);
+  }
+
+  .link-underline {
+    background-image: linear-gradient(var(--gold), var(--gold));
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, var(--wall-edge) 25%, var(--paper) 50%, var(--wall-edge) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2.4s linear infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Reduced motion: honoured both from the OS and from Settings */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html[data-motion='reduced'] *,
+html[data-motion='reduced'] *::before,
+html[data-motion='reduced'] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
